@@ -1,0 +1,131 @@
+####################################################################################################
+# Notes about install packages in best practices
+
+
+
+# Installing Steps:
+##### creating + filling >> "requirement.txt" steps:
+######### echo "fastapi" >> requirement.txt
+######### echo "uvicorn" >> requirement.txt
+######### echo "langchain" >> requirement.txt
+######### echo "langgraph" >> requirement.txt
+##### installing >> "requirement.txt" steps:
+######### pip install -r requirement.txt
+
+
+
+# Summary Table About Versions:
+# | --------------- | ------------------------- | ------------------ | -------------------- | -------------------- |
+# | Style           | Example                   | Use Case           | Pros                 | Cons                 |
+# | --------------- | ------------------------- | ------------------ | -------------------- | -------------------- |
+# | Floating latest | `requests`                | Early dev          | Always new features  | Can break anytime    |
+# | Exact pin 1     | `requests==2.31.0`        | Production         | Stable, reproducible | Must update manually |
+# | Exact pin 2     | `fastapi~=0.115.0`        | MinorUpdate 0.115.x| Stable, reproducible | Must update manually |
+# | Range-based 1   | `requests>=2.31.0`        | Controlled updates | Balanced             | Slightly complex     |
+# | Range-based 2   | `requests>=2.31.0,<3.0.0` | Controlled updates | Balanced             | Slightly complex     |
+# | --------------- | ------------------------- | ------------------ | -------------------- | -------------------- |
+
+####################################################################################################
+# install packages ( legacy way that commented ) & ( best practices way that used )
+
+
+
+# =============================================
+# legacy way should be deleted after guaranted of everything work correctly with below clean way
+# =============================================
+# Required Packages:
+# python-dotenv
+# fastapi
+# uvicorn[standard]
+# langchain
+# langgraph
+# langchain-openai
+# langchain-core
+
+
+
+# =============================================
+# REQUIREMENTS.TXT — INTELLIGENT EDUCATION SYSTEM
+# =============================================
+
+# [ 01 ]:
+# Enables sending HTTP requests (POST/GET) to APIs such as Serper, Tavily, etc.
+requests==2.32.3
+
+# [ 02 ]:
+# The main lightweight web framework for building backend APIs.
+fastapi==0.118.0
+
+# [ 03 ]:
+# The ASGI server that actually runs your FastAPI app.
+# "[standard]" installs optional high-performance components (like uvloop).
+uvicorn[standard]==0.31.0
+
+# [ 04 ]:
+# Installs the package that lets you read variables from your .env file.
+# Used in your code here:
+#   from dotenv import load_dotenv
+#   load_dotenv()
+python-dotenv==1.1.1
+
+# [ 05 ]:
+# Provides integration with OpenAI API (GPT + Whisper).
+# Used for LLM responses, transcriptions, and personalized tutoring features.
+openai==2.6.0
+
+# [ 06 ]:
+# Core framework for building intelligent LLM-driven applications.
+# Used to chain GPT responses, retrievers, and memory.
+# Recommended version: >=0.3.27
+langchain>=0.3.27,<1.0.0
+
+# [ 07 ]:
+# Extension library for LangChain specialized in graph-based reasoning workflows.
+# Used for implementing your Knowledge Graph & GraphRAG retrieval system.
+# Recommended version: >=0.6.7
+langgraph>=0.6.11,<1.0.0
+
+# [ 08 ]:
+# Provides OpenAI connectors for LangChain.
+# Lets LangChain directly access GPT, Whisper, and embeddings through the OpenAI API.
+# Recommended version: >=0.3.32
+langchain-openai>=0.3.35,<1.0.0
+
+# [ 09 ]:
+# Lightweight audio processing library.
+# Used if you download video content and need to extract or convert audio for Whisper.
+pydub==0.25.1
+
+# [ 10 ]:
+# Provides flexible data structures and utilities for organizing results.
+# You can use it to store, filter, and manipulate discovery/extraction results.
+pandas==2.2.3
+
+# [ 11 ]:
+# Provides downloading of videos and audio from YouTube & many other platforms.
+# Used to fetch media streams (for extraction and transcription workflows).
+# Recommended version: >=2025.10.14
+yt-dlp>=2025.10.14,<2026.0.0
+
+# [ 12 ]:
+# Provides bundled FFmpeg binaries for Windows, macOS, and Linux.
+# Automatically ensures yt_dlp can run without manual FFmpeg installation.
+# Recommended version: >=0.5.1
+imageio-ffmpeg>=0.5.1,<1.0.0
+
+# [ 13 ]:
+# Official Google API client for Python.
+# Used to interact with the YouTube Data API v3 (fetch metadata, captions, etc.)
+google-api-python-client==2.149.0
+
+# [ 14 ]:
+# Provides simple access to YouTube video transcripts and subtitles.
+# Used to fetch captions when available before falling back to AssemblyAI.
+youtube-transcript-api==0.6.2
+
+# [ 15 ]:
+# Lightweight library to download YouTube videos or extract audio streams.
+# Used for fetching audio files for AssemblyAI transcription.
+pytube==15.0.0
+
+####################################################################################################

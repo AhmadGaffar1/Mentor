@@ -1,0 +1,23 @@
+####################################################################################################
+
+Intelligent_Personalized_Education_System/
+│── main.py
+│── App/
+│   ├── __init__.py
+│   ├── Configration.py
+│   ├── Classes.py
+│   ├── Fake_Database.py
+│   ├── Prompts.py
+│   ├── Services/
+│   │   ├── Agent_Service.py
+│   │   └── Student_Service.py
+│   └── Routes/
+│   │   ├── __init__.py
+│   │   ├── Student_Routes.py
+│   │   └── Agent_Routes.py
+│   └── Chats/
+│       ├── __init__.py
+│       ├── Chat_Display.py
+│       └── All Markdown Files: Each student have a separated file for display his chat history with Edulga Agent
+
+####################################################################################################
