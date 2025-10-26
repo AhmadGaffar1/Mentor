@@ -75,11 +75,11 @@ if videos:
 
 import time
 from uuid import UUID
+
 from APP.Services.Search_Serper import discover_with_serper
 from APP.Services.Search_Tavily import discover_with_tavily
 from APP.Services.Extract_Diffbot import extract_with_diffbot
 from APP.Services.VideosMetadata_YouTubeAPI_AssemblyAIAPI import process_videos
-from APP.Services.Transcribe_Whisper import youtube_to_whisper_transcript
 
 # ============================================================
 # Helper Function

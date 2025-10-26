@@ -217,16 +217,6 @@ def discover_with_tavily(id: UUID, query: str, search_type: str = "search", sear
     #           "score": 0.92,
     #           "raw_content": null,
     #       },
-    #
-    #       {
-    #           "title": "---",
-    #           "url": "---",
-    #           "content": "---",
-    #           "score": x.xx
-    #           "raw_content": "---",
-    #       },
-    #
-    #       ...,
     #   ],
     #
     #   "query": "deep learning"
